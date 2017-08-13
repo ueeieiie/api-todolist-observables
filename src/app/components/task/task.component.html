@@ -1,0 +1,14 @@
+<div class="task">
+  <input type="checkbox" [(ngModel)]="taskData.isCompleted" />
+  <div [hidden]="editMode" [ngClass]="{completed: taskData.isCompleted}">
+    {{ taskData.text }}
+  </div>
+  <div [hidden]="!editMode">
+    <input type="text" value="{{taskData.text}}" #editedTask>
+    <button (click)="saveEditedTask(editedTask)">save</button>
+  </div>
+  <div [hidden]="editMode">
+    <a href="#" (click)="setEditMode()"> edit </a>
+    <a href="#" (click)="removeTask()"> X</a>
+  </div>
+</div>
