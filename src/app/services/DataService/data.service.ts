@@ -15,33 +15,25 @@ export class DataService {
 				q: 'how much is 1 + 1?',
 				ans: [2, 10, 100, 0],
 				selected: null,
-				checked: {0: false, 1: false, 2: false, 3: false},
 				correct: 0,
-				isCorrect: false
 			},
 			{
 				q: 'how much is 10 + 10?',
 				ans: [-9, 20, 33.4, 500],
 				selected: null,
-				checked: {0: false, 1: false, 2: false, 3: false},
 				correct: 1,
-				isCorrect: false
 			},
 			{
 				q: 'how much is 100 + 100?',
 				ans: [12, 1000, 200, 0.1],
 				selected: null,
-				checked: {0: false, 1: false, 2: false, 3: false},
 				correct: 2,
-				isCorrect: false
 			},
 			{
 				q: 'how much is 1000 + 1000?',
 				ans: [1.0000, 100000, 7, 2000],
 				selected: null,
-				checked: {0: false, 1: false, 2: false, 3: false},
 				correct: 3,
-				isCorrect: false
 			}
 		],
 	};
