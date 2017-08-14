@@ -1,4 +1,10 @@
-<div class="add-task">
-    <input type="text" #task>
-    <button (click)="add(task)">Add Task</button>
+<div class=" add-task row">
+  <div class="col-lg-10">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" (click)="add(task)" type="button">Add Task</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Add a new task..." #task>
+    </div>
+  </div>
 </div>
