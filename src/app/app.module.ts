@@ -10,7 +10,7 @@ import { DataService } from './services/DataService/data.service'
 import { LocalStorageService } from './services/LocalStorageService/localStroage.service'
 
 // Routes
-import routes from './app.routes';
+import { routes } from './app.routes';
 
 import { AppComponent } from './components/app/app.component';
 import { TaskComponent } from './components/task/task.component';
@@ -21,6 +21,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { QuizComponent } from './components/quiz/quiz.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
     NavbarComponent,
     HomeComponent,
     AboutComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    QuizComponent
   ],
   imports: [
     routes,
