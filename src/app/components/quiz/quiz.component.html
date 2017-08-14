@@ -6,12 +6,11 @@
 			<li *ngFor="let answer of quizData.questions[quizData.currentQuestion].ans; let i = index">
 				<label [for]="i">
 					<input type="radio" 
-							name="answers" 
-							[id]="i" 
-							(change)="setAnswer($event)" 
-							[checked]="quizData.questions[quizData.currentQuestion].checked[i]"
+						name="answers" 
+						[id]="i" 
+						(change)="setAnswer($event)" 
+						[checked]="quizData.questions[quizData.currentQuestion].checked[i]"
 					> 
-
 					{{ answer }}
 				</label>
 			</li>
