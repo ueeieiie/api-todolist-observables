@@ -9,33 +9,32 @@ export class DataService {
 
 	quizData = {
 		currentQuestion: 0,
-		correctedAnswers: 0,
 		questions: [
 			{
-				q: 'how much is 1 + 1?',
-				ans: [2, 10, 100, 0],
+				question: 'how much is 1 + 1?',
+				answers: [2, 10, 100, 0],
 				selected: null,
 				correct: 0,
 			},
 			{
-				q: 'how much is 10 + 10?',
-				ans: [-9, 20, 33.4, 500],
+				question: 'how much is 10 + 10?',
+				answers: [-9, 20, 33.4, 500],
 				selected: null,
 				correct: 1,
 			},
 			{
-				q: 'how much is 100 + 100?',
-				ans: [12, 1000, 200, 0.1],
+				question: 'how much is 100 + 100?',
+				answers: [12, 1000, 200, 0.1],
 				selected: null,
 				correct: 2,
 			},
 			{
-				q: 'how much is 1000 + 1000?',
-				ans: [1.0000, 100000, 7, 2000],
+				question: 'how much is 1000 + 1000?',
+				answers: [1.0000, 100000, 7, 2000],
 				selected: null,
 				correct: 3,
 			}
-		],
+		]
 	};
 
 constructor(private localStorageService: LocalStorageService) { }

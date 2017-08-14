@@ -1,0 +1,31 @@
+<div class="quiz container-fluid">
+    <h3>Quiz:</h3>
+    <div *ngIf="quizData">
+        <h5> {{ quizData.questions[quizData.currentQuestion].question }} </h5>
+
+        <ul>
+            <li *ngFor="let answer of quizData.questions[quizData.currentQuestion].answers; let i = index">
+                <label>
+                    <input type="radio" 
+                            [value]="i"
+                            [(ngModel)]="quizData.questions[quizData.currentQuestion].selected"
+                    >
+                    {{ answer }}
+                </label>
+            </li>
+        </ul>
+
+        <button [disabled]="quizData.currentQuestion == 0"
+                (click)="quizData.currentQuestion = quizData.currentQuestion - 1">
+            Prev
+        </button>
+        <button [hidden]="quizData.currentQuestion == quizData.questions.length - 1"
+                (click)="quizData.currentQuestion = quizData.currentQuestion + 1">
+            Next
+        </button>
+        <button (click)="getScore()"
+                [hidden]="quizData.currentQuestion !== quizData.questions.length - 1">
+            Done
+        </button>
+    </div>
+</div>
