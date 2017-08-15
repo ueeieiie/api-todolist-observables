@@ -33,33 +33,22 @@ export class QuizComponent implements OnInit {
 	 * 
 	 */
   getScore(){	
-		// UNDERSTAND HOW TO DO IT WITH REDUCE METHOD:
-	// let totalCorrect = this.quizData.questions.reduce((sum, item)=>{
-	// 	if( item.seleceted == item.correct ){
-	// 		console.log(item.selected, 'correct');
-	// 		return sum + 1;
-	// 	} else {
-	// 		console.log('wrong')
-	// 		return sum
-	// 	}
-	// }, 0);
+		let totalCorrect = this.quizData.questions.reduce((sum, {selected, correct})=>{
+			if( selected == correct ){
+				return sum + 1;
+			}
+			return sum
+		}, 0);
 
-	let totalCorrect = 0;
-	this.quizData.questions.forEach(question => {
-		if(question.selected == question.correct){
-			totalCorrect += 1;
-		}
-	});
-	console.log('You succeeded with ', totalCorrect, 'out of', this.quizData.questions.length);
-	console.log('Your score is:', totalCorrect / this.quizData.questions.length * 100 );
-	
-	this.	resetCurrentQuestion();		
-	this.resetSelectedAnswers();
+		this.resetCurrentQuestion();		
+		this.resetSelectedAnswers();
 
-	alert('done');
-
-	// move this to a routeService
-	this.router.navigate(['/home']);
+		alert(
+			`You succeeded with ${totalCorrect} out of ${this.quizData.questions.length}
+			Your score is ${totalCorrect / this.quizData.questions.length * 100}`
+		);
+		// move this to a routeService
+		this.router.navigate(['/home']);
 	}
 	
 	/**
