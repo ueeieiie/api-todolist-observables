@@ -27,8 +27,13 @@ export class QuizComponent implements OnInit {
     });
   }
 
-  getScore(){
-	
+	/**
+	 * getScore() method:
+	 * 
+	 * 
+	 */
+  getScore(){	
+		// UNDERSTAND HOW TO DO IT WITH REDUCE METHOD:
 	// let totalCorrect = this.quizData.questions.reduce((sum, item)=>{
 	// 	if( item.seleceted == item.correct ){
 	// 		console.log(item.selected, 'correct');
@@ -45,17 +50,33 @@ export class QuizComponent implements OnInit {
 			totalCorrect += 1;
 		}
 	});
-
 	console.log('You succeeded with ', totalCorrect, 'out of', this.quizData.questions.length);
 	console.log('Your score is:', totalCorrect / this.quizData.questions.length * 100 );
+	
+	this.	resetCurrentQuestion();		
+	this.resetSelectedAnswers();
 
-	this.quizData.currentQuestion = 0;
-	this.clearSelectedAnswers();
 	alert('done');
-	this.router.navigate(['/home']);
-  }
 
-  clearSelectedAnswers(){
+	// move this to a routeService
+	this.router.navigate(['/home']);
+	}
+	
+	/**
+	 * resetCurrentQuestion() method:
+	 * 
+	 * resets the currenQuestion data
+	 */
+	resetCurrentQuestion(){
+		this.quizData.currentQuestion = 0;
+	}
+
+	/**
+	 * resetSelecetedAnswers()
+	 * 
+	 * resets the selected answers in the quizData
+	 */
+  resetSelectedAnswers(){
 	  this.quizData.questions.forEach(question => {
 		  question.selected = null;
 	  })
